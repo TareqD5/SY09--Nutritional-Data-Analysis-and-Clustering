@@ -63,7 +63,7 @@ The analysis follows a structured four-step pipeline:
 
 ## Project Structure
 ```
-SY09---Classification-des-aliments/
+SY09--Nutritional-Data-Analysis-and-Clustering/
 │
 ├── SY09_Jupyter.ipynb              # Main notebook: full analysis, code & visualizations
 ├── SY09_Projet_Rapport_Final.pdf   # Detailed report: methodology & result interpretation
@@ -77,8 +77,8 @@ SY09---Classification-des-aliments/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/TareqD5/SY09---Classification-des-aliments.git
-cd SY09---Classification-des-aliments
+git clone https://github.com/TareqD5/SY09--Nutritional-Data-Analysis-and-Clustering.git
+cd SY09--Nutritional-Data-Analysis-and-Clustering
 ```
 
 ### 2. Install dependencies
