@@ -1,55 +1,120 @@
-# Analyse et Clustering de Données Nutritionnelles (Projet SY09)
-Ce projet a été réalisé dans le cadre de l'unité d'enseignement SY09 (Analyse de données). L'objectif est d'explorer, de visualiser et de segmenter un jeu de données nutritionnelles afin d'identifier des groupes d'aliments cohérents et d'analyser leurs similarités structurelles.
+# Nutritional Data Analysis & Clustering — SY09 Project
 
-## Présentation du Projet
-Le projet repose sur l'étude d'un dataset (cleaned_nutrition_dataset.csv) contenant diverses caractéristiques nutritionnelles pour une large gamme d'aliments. À travers une démarche de Data Science rigoureuse, nous appliquons des techniques de réduction de dimension et de clustering pour extraire de la connaissance à partir de données multidimensionnelles.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-yellowgreen?logo=scikit-learn)
+![License](https://img.shields.io/badge/License-Academic-lightgrey)
 
-Points clés de l'étude :
-Nettoyage & Prétraitement : Normalisation des données pour garantir l'équité entre les variables.
-Réduction de Dimension : Utilisation de l'ACP (Analyse en Composantes Principales) et du MDS (Multidimensional Scaling / AFTD) pour visualiser les données en 2D/3D.
-Clustering (Segmentation) : Mise en œuvre de la CAH (Classification Ascendante Hiérarchique) avec analyse de dendrogrammes pour définir le nombre optimal de classes.
-Visualisation Avancée : Utilisation de diagrammes de Shepard pour valider la qualité des projections MDS.
+> Unsupervised machine learning project applying dimensionality reduction (PCA, MDS) and hierarchical clustering (HAC) to a nutritional dataset, as part of the **SY09 – Data Science** course at UTC.
 
-🛠️ Technologies & Bibliothèques
-Langage : Python 3
-Analyse de données : Pandas, NumPy
-Machine Learning : Scikit-learn (PCA, MDS, AgglomerativeClustering)
-Visualisation : Matplotlib, Seaborn
+---
 
+## Table of Contents
 
-## Installation et Utilisation
-1. Cloner le dépôt
-Bash
-git clone https://github.com/votre-utilisateur/votre-projet.git
-cd votre-projet
+- [Overview](#overview)
+- [Methodology](#methodology)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Key Results](#key-results)
+- [Authors](#authors)
 
-2. Installer les dépendances
-Il est recommandé d'utiliser un environnement virtuel :
-Bash
-pip install pandas numpy matplotlib seaborn scikit-learn
+---
 
-3. Lancer l'analyse
-Ouvrez le fichier Jupyter Notebook pour visualiser les étapes de l'analyse :
-Bash
+## Overview
+
+This project was carried out as part of the **SY09 (Data Science)** course unit at the **Université de Technologie de Compiègne (UTC)**. The goal is to explore, visualize, and segment a nutritional dataset in order to identify coherent food groups and analyze their structural similarities.
+
+The study is based on `cleaned_nutrition_dataset.csv`, a dataset containing a wide range of nutritional features for hundreds of food items. Through a rigorous data science pipeline, we apply unsupervised learning techniques to extract meaningful knowledge from this high-dimensional data.
+
+---
+
+## Methodology
+
+The analysis follows a structured four-step pipeline:
+
+1. **Data Cleaning & Preprocessing**  
+   Standardization and normalization of all nutritional variables to ensure comparability across features with different scales.
+
+2. **Dimensionality Reduction**  
+   - **PCA (Principal Component Analysis):** Projects the data onto a lower-dimensional space while maximizing variance retention, enabling 2D/3D visualization.  
+   - **MDS / AFTD (Multidimensional Scaling):** Preserves pairwise distances between food items in the projected space.
+
+3. **Clustering (Segmentation)**  
+   - **HAC (Hierarchical Agglomerative Clustering):** Groups food items bottom-up using linkage criteria. Dendrogram analysis is used to determine the optimal number of clusters.
+
+4. **Advanced Visualization**  
+   - **Shepard Diagrams:** Assess the quality of MDS projections by comparing original distances to projected distances.  
+   - **Factorial Planes & Dendrograms:** Provide interpretable visual summaries of the clustering structure.
+
+---
+
+## Tech Stack
+
+| Category | Tools |
+|---|---|
+| Language | Python 3 |
+| Data Analysis | Pandas, NumPy |
+| Machine Learning | Scikit-learn (PCA, MDS, AgglomerativeClustering) |
+| Visualization | Matplotlib, Seaborn |
+| Environment | Jupyter Notebook |
+
+---
+
+## Project Structure
+```
+SY09---Classification-des-aliments/
+│
+├── SY09_Jupyter.ipynb              # Main notebook: full analysis, code & visualizations
+├── SY09_Projet_Rapport_Final.pdf   # Detailed report: methodology & result interpretation
+├── cleaned_nutrition_dataset.csv   # Input dataset
+└── utils.py                        # Utility functions (plot_dendrogram, plot_Shepard, etc.)
+```
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/TareqD5/SY09---Classification-des-aliments.git
+cd SY09---Classification-des-aliments
+```
+
+### 2. Install dependencies
+
+It is recommended to use a virtual environment:
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+### 3. Launch the notebook
+```bash
 jupyter notebook SY09_Jupyter.ipynb
+```
 
+---
 
-## Structure du Projet
-SY09_Jupyter.ipynb : Le notebook contenant l'intégralité du code, des analyses et des visualisations.
-SY09_Projet_Rapport_Final.pdf : Le rapport détaillé expliquant les choix méthodologiques et l'interprétation des résultats.
-cleaned_nutrition_dataset.csv : Le jeu de données utilisé pour l'étude.
-utils : Fichier contenant des fonctions utilitaires (ex: plot_dendrogram, plot_Shepard).
+## Key Results
 
+- **Nutrient correlations:** Strong relationships identified between fat content and caloric density, as well as between protein and mineral content.
+- **PCA:** The first two principal components retain over **70% of total inertia**, confirming the adequacy of 2D projection for this dataset.
+- **HAC Clustering:** The dendrogram analysis revealed **7 distinct food clusters**, including:
+  - Dairy products
+  - Meat & fish
+  - Cereal & grain products
+  - Fruits & vegetables
+  - Processed/high-fat foods
 
-## Résultats Principaux
-L'analyse a permis de :
+---
 
-Identifier les corrélations entre les différents nutriments (ex: graisses vs calories).
+## Authors
 
-Projeter les aliments dans un plan factoriel conservant plus de 80% de l'inertie (via ACP).
+| Name | Institution |
+|---|---|
+| Tareq Derdaki | UTC — Université de Technologie de Compiègne |
+| Ruoyang Wang | UTC — Université de Technologie de Compiègne |
+| Tidiane Bengriche | UTC — Université de Technologie de Compiègne |
 
-Dégager 7 classes d'aliments distinctes via la CAH, regroupant par exemple les produits laitiers, les viandes/poissons, ou encore les produits céréaliers.
-
-
-Auteurs : Tareq Derdaki, Ruoyang Wang, Tidiane Bengriche
-Contexte : Université de Technologie de Compiègne (UTC) - UV SY09
+**Course:** SY09 – Data Science  
+**Institution:** [Université de Technologie de Compiègne (UTC)](https://www.utc.fr)
